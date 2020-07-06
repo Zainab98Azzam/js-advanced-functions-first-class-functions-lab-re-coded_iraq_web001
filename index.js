@@ -1,28 +1,15 @@
-
-const returnFirstTwoDrivers = function(Array){
-  let a = [Array[0],Array[1]]
-  return a
+const returnFirstTwoDrivers=(driverArr)=>[driverArr[0],driverArr[1]];
+const returnLastTwoDrivers=(driverArr)=>[driverArr[driverArr.length-2],driverArr[driverArr.length-1]];
+let selectingDrivers=[returnFirstTwoDrivers,returnLastTwoDrivers];
+function createFareMultiplier(integer) {
+  return  (fare)=>( fare * integer)
 }
-
-
-const returnLastTwoDrivers =function(array){
-  let a = [Array[-2], Array[-1]]
+function createFareMultiplier(integer) {
+  return  (fare)=>( fare * integer)
 }
+const fareDoubler=createFareMultiplier(2);
+const fareTripler=createFareMultiplier(3);
 
-selectingDrivers = [returnFirstTwoDrivers,returnLastTwoDrivers]
-function createFareMultiplier(a){
-  return function(b){
-      a*b
-    }
-}
-const fareDoubler = function(a){
-  return selectingDrivers(a)
-}
-const fareTripler = function(a){
-  return selectingDrivers(a)
-}
-
-function selectDifferentDrivers(drivers,functionOneOrTwo){
-  return functionOneOrTwo(drivers)
-  
+function selectDifferentDrivers(driverArr,returnFn){
+  return returnFn(driverArr);
 }
